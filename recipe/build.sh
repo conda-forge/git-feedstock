@@ -18,3 +18,12 @@ make \
     NO_GETTEXT=1 \
     NO_INSTALL_HARDLINKS=1 \
     all strip install
+
+curl https://raw.githubusercontent.com/bagder/ca-bundle/master/ca-bundle.crt -o $PREFIX/bin/ca-bundle.crt
+
+mkdir -p $PREFIX/etc
+cat > $PREFIX/etc/gitconfig <<endmsg
+[http]
+    sslVerify = true
+    sslCAinfo = $PREFIX/bin/ca-bundle.crt
+endmsg
