@@ -13,21 +13,22 @@ source:
   sha256: 4d5a2729b4443ab2d80b899ceebd19ae2cbd17a3b2121178def3590a7dc91987                                                        # [win]
 
 build:
+  number: 0
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
 
 requirements:
   build:
-    - expat     [unix]
-    - curl      [unix]
-    - openssl   [unix]
-    - zlib      [unix]
-    - 7za       [win]
+    - expat    # [unix]
+    - curl     # [unix]
+    - openssl  # [unix]
+    - zlib     # [unix]
+    - 7za      # [win]
   run:
-    - expat     [unix]
-    - curl      [unix]
-    - openssl   [unix]
-    - zlib      [unix]
+    - expat    # [unix]
+    - curl     # [unix]
+    - openssl  # [unix]
+    - zlib     # [unix]
 
 test:
   commands:
@@ -41,3 +42,5 @@ about:
 extra:
   recipe-maintainers:
     - jakirkham
+    - msarahan
+    - pelson
