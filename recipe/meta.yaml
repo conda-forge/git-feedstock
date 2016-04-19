@@ -19,16 +19,17 @@ build:
 
 requirements:
   build:
-    - expat    # [unix]
-    - curl     # [unix]
-    - openssl  # [unix]
-    - zlib     # [unix]
-    - 7za      # [win]
+    - autoconf    # [unix]
+    - expat       # [unix]
+    - curl        # [unix]
+    - openssl     # [unix]
+    - zlib        # [unix]
+    - 7za         # [win]
   run:
-    - expat    # [unix]
-    - curl     # [unix]
-    - openssl  # [unix]
-    - zlib     # [unix]
+    - expat       # [unix]
+    - curl        # [unix]
+    - openssl     # [unix]
+    - zlib        # [unix]
 
 test:
   commands:
