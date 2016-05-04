@@ -5,9 +5,9 @@ package:
   version: {{ version }}
 
 source:
-  fn: v{{ version }}.tar.gz                                                                                                       # [unix]
-  url: https://github.com/git/git/archive/v{{ version }}.tar.gz                                                                   # [unix]
-  sha256: 8d53703d75890c03e26a915c7af3b7b98d8cfb94382f685a9bcbee1eeaec47b4                                                        # [unix]
+  fn: git-{{ version }}.tar.gz                                                  # [unix]
+  url: https://github.com/git/git/archive/v{{ version }}.tar.gz              # [unix]
+  sha256: e08503ecaf5d3ac10c40f22871c996a392256c8d038d16f52ebf974cba29ae42   # [unix]
 
 build:
   number:   0
