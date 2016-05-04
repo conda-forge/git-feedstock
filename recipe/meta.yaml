@@ -4,8 +4,8 @@ package:
   name: git
   version: {{ version }}
 
-source:
-  fn: git-{{ version }}.tar.gz                                                  # [unix]
+source:                                                                      # [unix]
+  fn: git-{{ version }}.tar.gz                                               # [unix]
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz              # [unix]
   sha256: e08503ecaf5d3ac10c40f22871c996a392256c8d038d16f52ebf974cba29ae42   # [unix]
 
@@ -16,6 +16,7 @@ build:
 
 requirements:
   build:
+    - autoconf  # [linux]
     - curl      # [unix]
     - expat     # [unix]
     - openssl   # [unix]
