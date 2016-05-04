@@ -3,8 +3,8 @@
     "menu_items":
     [
     {
-        "name": "Git Bash",
-        "script": "${PREFIX}/Library/bin/bash.exe",
+        "name": "MSYS2 Bash",
+        "script": "${PREFIX}/Library/usr/bin/bash.exe",
         "scriptarguments": ["--login", "-i", "--"],
         "workdir": "${PERSONALDIR}",
         "icon": "${MENU_DIR}/git-for-windows.ico"
