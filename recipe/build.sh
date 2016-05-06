@@ -9,8 +9,13 @@ export LIBRARY_PATH="${PREFIX}/lib"
 #   /ref http://www.spinics.net/lists/git/msg99803.html
 # NO_GETTEXT disables internationalization (localized message translations)
 # NO_INSTALL_HARDLINKS uses symlinks which makes the package 85MB slimmer (8MB instead of 93MB!)
+
+# Add a place for git config files.
+mkdir -p $PREFIX/etc
 make configure
-./configure --prefix="${PREFIX}"
+./configure \
+    --prefix="${PREFIX}" \
+    --with-gitconfig="${PREFIX}/etc/gitconfig"
 make \
     --jobs="$CPU_COUNT" \
     NO_TCLTK=1 \
