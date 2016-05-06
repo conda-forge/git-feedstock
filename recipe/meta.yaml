@@ -26,7 +26,6 @@ requirements:
     - zlib        # [unix]
     - 7za         # [win]
   run:
-    - certifi     # [unix]
     - curl        # [unix]
     - expat       # [unix]
     - openssl     # [unix]
