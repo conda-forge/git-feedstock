@@ -15,6 +15,7 @@ mkdir -p $PREFIX/etc
 make configure
 ./configure \
     --prefix="${PREFIX}" \
+    --with-gitattributes="${PREFIX}/etc/gitattributes" \
     --with-gitconfig="${PREFIX}/etc/gitconfig"
 make \
     --jobs="$CPU_COUNT" \
