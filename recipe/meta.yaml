@@ -1,4 +1,4 @@
-{% set version = "2.7.4" %}
+{% set version = "2.8.2" %}
 
 package:
   name: git
@@ -7,27 +7,29 @@ package:
 source:
   fn: v{{ version }}.tar.gz                                                                                                       # [unix]
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz                                                                   # [unix]
-  sha256: 8d53703d75890c03e26a915c7af3b7b98d8cfb94382f685a9bcbee1eeaec47b4                                                        # [unix]
+  sha256: b8645cb549f8f7210495fea36fa968de6537ad3c74be17d45e53c99f5b0c4de4                                                        # [unix]
   fn: PortableGit-{{ version }}-32-bit.7z.exe                                                                                     # [win]
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-32-bit.7z.exe  # [win]
-  sha256: 4d5a2729b4443ab2d80b899ceebd19ae2cbd17a3b2121178def3590a7dc91987                                                        # [win]
+  sha256: da25bc12efa864cda53dc6485c84dd8b0d41883dd360db505c026c284ef58d8e                                                        # [win]
 
 build:
+  number: 0
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
 
 requirements:
   build:
-    - expat     [unix]
-    - curl      [unix]
-    - openssl   [unix]
-    - zlib      [unix]
-    - 7za       [win]
+    - autoconf    # [unix]
+    - expat       # [unix]
+    - curl        # [unix]
+    - openssl     # [unix]
+    - zlib        # [unix]
+    - 7za         # [win]
   run:
-    - expat     [unix]
-    - curl      [unix]
-    - openssl   [unix]
-    - zlib      [unix]
+    - expat       # [unix]
+    - curl        # [unix]
+    - openssl     # [unix]
+    - zlib        # [unix]
 
 test:
   commands:
@@ -41,3 +43,5 @@ about:
 extra:
   recipe-maintainers:
     - jakirkham
+    - msarahan
+    - pelson
