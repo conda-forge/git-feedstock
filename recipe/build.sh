@@ -25,9 +25,6 @@ make \
     NO_INSTALL_HARDLINKS=1 \
     all strip install
 
-mkdir -p $PREFIX/etc
-cat > $PREFIX/etc/gitconfig <<endmsg
-[http]
-    sslVerify = true
-    sslCAinfo = $PREFIX/ssl/cacert.pem
-endmsg
+git config --system http.sslVerify true
+git config --system http.sslCAPath "${PREFIX}/ssl/cacert.pem"
+git config --system http.sslCAfile "${PREFIX}/ssl/cacert.pem"
