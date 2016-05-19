@@ -33,6 +33,10 @@ requirements:
 
 test:
   commands:
+    # FIXME: Please remove me once we have fixed git and curl.
+    - grep -r "/opt/conda/envs/_build/ssl/cacert.pem" /opt/conda/envs/_test/  # [unix]
+
+    # Actual tests to keep (delete this comment when done too).
     - git --version
     - git clone https://github.com/conda-forge/git-feedstock
 
