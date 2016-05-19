@@ -27,4 +27,4 @@ make \
 
 git config --system http.sslVerify true
 git config --system http.sslCAPath "${PREFIX}/ssl/cacert.pem"
-git config --system http.sslCAFile "${PREFIX}/ssl/cacert.pem"
+git config --system http.sslCAInfo "${PREFIX}/ssl/cacert.pem"
