@@ -20,14 +20,14 @@ build:
 requirements:
   build:
     - autoconf    # [unix]
-    - expat       # [unix]
     - curl        # [unix]
+    - expat       # [unix]
     - openssl     # [unix]
     - zlib        # [unix]
     - 7za         # [win]
   run:
-    - expat       # [unix]
     - curl        # [unix]
+    - expat       # [unix]
     - openssl     # [unix]
     - zlib        # [unix]
 
