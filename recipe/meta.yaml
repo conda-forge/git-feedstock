@@ -34,8 +34,8 @@ requirements:
 test:
   commands:
     # FIXME: Please remove me once we have fixed git and curl.
-    - cat /opt/conda/envs/_test/etc/gitconfig                                 # [unix]
-    - grep -r "/opt/conda/envs/_build/ssl/cacert.pem" /opt/conda/envs/_test/  # [unix]
+    - cat "${PREFIX}/etc/gitconfig"                                # [unix]
+    - grep -r "/opt/conda/envs/_build/ssl/cacert.pem" "${PREFIX}"  # [unix]
 
     # Actual tests to keep (delete this comment when done too).
     - git --version
