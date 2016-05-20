@@ -8,9 +8,12 @@ source:
   fn: v{{ version }}.tar.gz                                                                                                       # [unix]
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz                                                                   # [unix]
   sha256: b8645cb549f8f7210495fea36fa968de6537ad3c74be17d45e53c99f5b0c4de4                                                        # [unix]
-  fn: PortableGit-{{ version }}-32-bit.7z.exe                                                                                     # [win]
-  url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-32-bit.7z.exe  # [win]
-  sha256: da25bc12efa864cda53dc6485c84dd8b0d41883dd360db505c026c284ef58d8e                                                        # [win]
+  fn: PortableGit-{{ version }}-32-bit.7z.exe                                                                                     # [win32]
+  url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-32-bit.7z.exe  # [win32]
+  sha256: da25bc12efa864cda53dc6485c84dd8b0d41883dd360db505c026c284ef58d8e                                                        # [win32]
+  fn: PortableGit-{{ version }}-64-bit.7z.exe                                                                                     # [win64]
+  url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
+  sha256: 553acbf46bacc67c73b954689ad3d9ac294bf9cbe249a5b78159a1f92f37105b                                                        # [win64]
 
 build:
   number: 1
