@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  fn: v{{ version }}.tar.gz                                                                                                       # [unix]
+  fn: git-{{ version }}.tar.gz                                                                                                   # [unix]
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz                                                                   # [unix]
   sha256: b8645cb549f8f7210495fea36fa968de6537ad3c74be17d45e53c99f5b0c4de4                                                        # [unix]
   fn: PortableGit-{{ version }}-32-bit.7z.exe                                                                                     # [win32]
