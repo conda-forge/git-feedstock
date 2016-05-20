@@ -1,4 +1,6 @@
-7za x PortableGit-2.6.4-32-bit.7z.exe -o"%LIBRARY_PREFIX%\" -aoa
+7za x PortableGit-%PKG_VERSION%-%ARCH%-bit.7z.exe -o"%LIBRARY_PREFIX%\" -aoa
+if errorlevel 1 exit 1
+
 cd %LIBRARY_PREFIX%
 call post-install.bat
 del git_bash.exe
