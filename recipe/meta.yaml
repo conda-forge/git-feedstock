@@ -33,6 +33,11 @@ requirements:
 
 test:
   commands:
+    # Verify git location.
+    - test -f $PREFIX/bin/git                               # [unix]
+    - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1    # [win]
+
+    # Run git commands.
     - git --version
     - git clone https://github.com/conda-forge/git-feedstock
 
