@@ -28,6 +28,7 @@ requirements:
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
+    - perl            # [unix]
     - zlib 1.2.*      # [unix]
     - 7za             # [win]
 
@@ -38,6 +39,7 @@ requirements:
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
+    - perl            # [unix]
     - zlib 1.2.*      # [unix]
 
 test:
