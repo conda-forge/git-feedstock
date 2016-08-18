@@ -45,8 +45,11 @@ requirements:
 test:
   commands:
     # Verify git location.
-    - test -f $PREFIX/bin/git                               # [unix]
-    - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1    # [win]
+    - test -f $PREFIX/bin/git                                # [unix]
+    - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1     # [win]
+
+    # Verify interactive support.
+    - test -f $PREFIX/libexec/git-core/git-add--interactive  # [unix]
 
     # Run git commands.
     - git --version
