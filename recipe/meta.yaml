@@ -26,6 +26,7 @@ requirements:
     - autoconf        # [unix]
     - curl            # [unix]
     - expat           # [unix]
+    - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
     - zlib 1.2.*      # [unix]
     - 7za             # [win]
@@ -35,6 +36,7 @@ requirements:
   run:
     - curl            # [unix]
     - expat           # [unix]
+    - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
     - zlib 1.2.*      # [unix]
 

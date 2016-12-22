@@ -24,7 +24,8 @@ make configure
 ./configure \
     --prefix="${PREFIX}" \
     --with-gitattributes="${PREFIX}/etc/gitattributes" \
-    --with-gitconfig="${PREFIX}/etc/gitconfig"
+    --with-gitconfig="${PREFIX}/etc/gitconfig" \
+    --with-iconv="${PREFIX}/lib"
 make \
     --jobs="$CPU_COUNT" \
     NO_TCLTK=1 \
