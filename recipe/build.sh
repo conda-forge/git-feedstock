@@ -3,6 +3,14 @@
 export C_INCLUDE_PATH="${PREFIX}/include"
 export LIBRARY_PATH="${PREFIX}/lib"
 
+if [ "$(uname)" == "Darwin" ]
+then
+    export LDFLAGS="-Wl,-rpath,$PREFIX/lib"
+elif [ "$(uname)" == "Linux" ]
+then
+    export LDFLAGS="-Wl,-rpath=$PREFIX/lib"
+fi
+
 # NO_TCLTK disables git-gui
 # NO_PERL disables all perl-based utils:
 #   git-instaweb, gitweb, git-cvsserver, git-svn
@@ -16,7 +24,8 @@ make configure
 ./configure \
     --prefix="${PREFIX}" \
     --with-gitattributes="${PREFIX}/etc/gitattributes" \
-    --with-gitconfig="${PREFIX}/etc/gitconfig"
+    --with-gitconfig="${PREFIX}/etc/gitconfig" \
+    --with-iconv="${PREFIX}/lib"
 make \
     --jobs="$CPU_COUNT" \
     NO_TCLTK=1 \
