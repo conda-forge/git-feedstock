@@ -25,11 +25,11 @@ make configure
     --prefix="${PREFIX}" \
     --with-gitattributes="${PREFIX}/etc/gitattributes" \
     --with-gitconfig="${PREFIX}/etc/gitconfig" \
-    --with-iconv="${PREFIX}/lib"
+    --with-iconv="${PREFIX}/lib" \
+    --with-perl="${PREFIX}/bin/perl"
 make \
     --jobs="$CPU_COUNT" \
     NO_TCLTK=1 \
-    NO_PERL=1 \
     NO_GETTEXT=1 \
     NO_INSTALL_HARDLINKS=1 \
     all strip install

@@ -16,7 +16,7 @@ source:
   sha256: 6a366a5b5702d24b401aba6b022d502b5f6597e00654075e491319878ba0a535                                                        # [win64]
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win and not py27]
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
@@ -28,6 +28,7 @@ requirements:
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
+    - perl 5.22.2.1   # [unix]
     - zlib 1.2.*      # [unix]
     - 7za             # [win]
 
@@ -38,13 +39,17 @@ requirements:
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
+    - perl 5.22.2.1   # [unix]
     - zlib 1.2.*      # [unix]
 
 test:
   commands:
     # Verify git location.
-    - test -f $PREFIX/bin/git                               # [unix]
-    - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1    # [win]
+    - test -f $PREFIX/bin/git                                # [unix]
+    - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1     # [win]
+
+    # Verify interactive support.
+    - test -f $PREFIX/libexec/git-core/git-add--interactive  # [unix]
 
     # Run git commands.
     - git --version
