@@ -50,6 +50,9 @@ test:
     - git --version
     - git clone https://github.com/conda-forge/git-feedstock
 
+    # test completions
+    - bash $PREFIX/share/bash-completion/completions/git  # [unix]
+
 about:
   home: https://git-scm.com/
   license: GPL v2 and LGPL 2.1
