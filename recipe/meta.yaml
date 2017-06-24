@@ -16,7 +16,7 @@ source:
   sha256: 6a366a5b5702d24b401aba6b022d502b5f6597e00654075e491319878ba0a535                                                        # [win64]
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win and not py27]
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
@@ -60,3 +60,4 @@ extra:
     - jakirkham
     - msarahan
     - pelson
+    - scopatz
