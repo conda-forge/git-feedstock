@@ -16,7 +16,7 @@ source:
   sha256: 3c3270a9df5f3db1f7637d86b94fb54a96e9145ba43c98a3e993cdffb1a1842e                                                        # [win64]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and not py27]
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
@@ -50,6 +50,9 @@ test:
     - git --version
     - git clone https://github.com/conda-forge/git-feedstock
 
+    # test completions
+    - bash $PREFIX/share/bash-completion/completions/git  # [unix]
+
 about:
   home: https://git-scm.com/
   license: GPL v2 and LGPL 2.1
@@ -60,3 +63,4 @@ extra:
     - jakirkham
     - msarahan
     - pelson
+    - scopatz
