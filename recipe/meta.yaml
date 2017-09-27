@@ -24,21 +24,21 @@ build:
 requirements:
   build:
     - autoconf        # [unix]
-    - curl            # [unix]
+    - curl >=7.44.0,<8 # [unix]
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
-    - zlib 1.2.*      # [unix]
+    - zlib 1.2.8      # [unix]
     - 7za             # [win]
 
     # Workaround for conda-build issue.
     - python          # [win]
   run:
-    - curl            # [unix]
+    - curl >=7.44.0,<8 # [unix]
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
-    - zlib 1.2.*      # [unix]
+    - zlib 1.2.8      # [unix]
 
 test:
   commands:
