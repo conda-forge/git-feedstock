@@ -1,4 +1,4 @@
-{% set version = "2.14.1" %}
+{% set version = "2.14.2" %}
 
 package:
   name: git
@@ -7,16 +7,16 @@ package:
 source:
   fn: git-{{ version }}.tar.gz                                                                                                    # [unix]
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz                                                                   # [unix]
-  sha256: ccc366d5d674fb755fd98d219c23f2b4e5da8a49d8582a6314813b280d75536b                                                        # [unix]
+  sha256: 917bbb401b20cabb65ffcaf925064e1990b2337bb20219c2963f1768ff33162b                                                        # [unix]
   fn: PortableGit-{{ version }}-32-bit.7z.exe                                                                                     # [win32]
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-32-bit.7z.exe  # [win32]
-  sha256: df3f9b6c2dd2b12e5cb7035b9ca48d13b973d054a35b0939953aa6e7a00a0659                                                        # [win32]
+  sha256: 6acd886bb1cebee7b5b607599c8327453110c28ddd8c4f976d14050ab0a17e11                                                        # [win32]
   fn: PortableGit-{{ version }}-64-bit.7z.exe                                                                                     # [win64]
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
-  sha256: 3c3270a9df5f3db1f7637d86b94fb54a96e9145ba43c98a3e993cdffb1a1842e                                                        # [win64]
+  sha256: 3d451383519379dfe2f160c4c3a49e4b9e39a666698f3eea2534593cc3fb5a4e                                                        # [win64]
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and not py27]
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
@@ -24,21 +24,21 @@ build:
 requirements:
   build:
     - autoconf        # [unix]
-    - curl            # [unix]
+    - curl >=7.44.0,<8  # [unix]
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
-    - zlib 1.2.*      # [unix]
+    - zlib 1.2.8      # [unix]
     - 7za             # [win]
 
     # Workaround for conda-build issue.
     - python          # [win]
   run:
-    - curl            # [unix]
+    - curl >=7.44.0,<8  # [unix]
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
-    - zlib 1.2.*      # [unix]
+    - zlib 1.2.8      # [unix]
 
 test:
   commands:
