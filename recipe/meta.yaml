@@ -24,7 +24,7 @@ build:
 requirements:
   build:
     - autoconf        # [unix]
-    - curl >=7.44.0,<8 # [unix]
+    - curl >=7.44.0,<8  # [unix]
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
@@ -34,7 +34,7 @@ requirements:
     # Workaround for conda-build issue.
     - python          # [win]
   run:
-    - curl >=7.44.0,<8 # [unix]
+    - curl >=7.44.0,<8  # [unix]
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
