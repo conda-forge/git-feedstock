@@ -16,7 +16,7 @@ source:
   sha256: 3d451383519379dfe2f160c4c3a49e4b9e39a666698f3eea2534593cc3fb5a4e                                                        # [win64]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and not py27]
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
@@ -28,7 +28,7 @@ requirements:
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
-    - zlib 1.2.8      # [unix]
+    - zlib 1.2.11      # [unix]
     - 7za             # [win]
 
     # Workaround for conda-build issue.
@@ -38,7 +38,7 @@ requirements:
     - expat           # [unix]
     - libiconv        # [unix]
     - openssl 1.0.*   # [unix]
-    - zlib 1.2.8      # [unix]
+    - zlib 1.2.11      # [unix]
 
 test:
   commands:
@@ -64,3 +64,4 @@ extra:
     - msarahan
     - pelson
     - scopatz
+    - ocefpaf
