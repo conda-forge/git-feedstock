@@ -1,4 +1,4 @@
-{% set version = "2.14.2" %}
+{% set version = "2.16.3" %}
 
 package:
   name: git
@@ -7,16 +7,16 @@ package:
 source:
   fn: git-{{ version }}.tar.gz                                                                                                    # [unix]
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz                                                                   # [unix]
-  sha256: 917bbb401b20cabb65ffcaf925064e1990b2337bb20219c2963f1768ff33162b                                                        # [unix]
+  sha256: 49bd4eeef9887ea90cb50a5187d34f3a1b4f17588ccafc65b4b93454392575da
   fn: PortableGit-{{ version }}-32-bit.7z.exe                                                                                     # [win32]
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-32-bit.7z.exe  # [win32]
-  sha256: 6acd886bb1cebee7b5b607599c8327453110c28ddd8c4f976d14050ab0a17e11                                                        # [win32]
+  sha256: 49bd4eeef9887ea90cb50a5187d34f3a1b4f17588ccafc65b4b93454392575da
   fn: PortableGit-{{ version }}-64-bit.7z.exe                                                                                     # [win64]
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
-  sha256: 3d451383519379dfe2f160c4c3a49e4b9e39a666698f3eea2534593cc3fb5a4e                                                        # [win64]
+  sha256: 49bd4eeef9887ea90cb50a5187d34f3a1b4f17588ccafc65b4b93454392575da
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win and not py27]
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
