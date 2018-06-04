@@ -5,15 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  fn: git-{{ version }}.tar.gz                                                                                                    # [unix]
-  url: https://github.com/git/git/archive/v{{ version }}.tar.gz                                                                   # [unix]
-  sha256: 690f12cc5691e5adaf2dd390eae6f5acce68ae0d9bd9403814f8a1433833f02a
-  fn: PortableGit-{{ version }}-32-bit.7z.exe                                                                                     # [win32]
-  url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-32-bit.7z.exe  # [win32]
-  sha256: 690f12cc5691e5adaf2dd390eae6f5acce68ae0d9bd9403814f8a1433833f02a
-  fn: PortableGit-{{ version }}-64-bit.7z.exe                                                                                     # [win64]
+  url: https://github.com/git/git/archive/v{{ version }}.tar.gz  # [not win]
+  sha256: 690f12cc5691e5adaf2dd390eae6f5acce68ae0d9bd9403814f8a1433833f02a  # [not win]
+
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
-  sha256: 690f12cc5691e5adaf2dd390eae6f5acce68ae0d9bd9403814f8a1433833f02a
+  sha256: bbf03185afa4a38390ae44d2780aa90d9052975f3be2f1b6a7f43231628a7de6  # [win64]
 
 build:
   number: 0
