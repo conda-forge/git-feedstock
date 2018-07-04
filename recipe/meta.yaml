@@ -47,11 +47,11 @@ test:
   commands:
     # Verify git location.
     - test -f $PREFIX/bin/git                               # [unix]
+    - test -f $PREFIX/bin/gitk                              # [unix]
     - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1    # [win]
 
     # Verify interactive support.
     - test -f $PREFIX/libexec/git-core/git-add--interactive  # [unix]
-    - test -f $PREFIX/libexec/git-core/gitk                  # [unix]
 
     # Run git commands.
     - git --version
