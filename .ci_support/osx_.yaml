@@ -27,7 +27,11 @@ pin_run_as_build:
     max_pin: x.x.x
   perl:
     max_pin: x.x
+  tk:
+    max_pin: x.x
   zlib:
     max_pin: x.x
+tk:
+- '8.6'
 zlib:
 - '1.2'
