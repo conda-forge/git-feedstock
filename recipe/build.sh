@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # NO_TCLTK disables git-gui
-# NO_GETTEXT disables internationalization (localized message translations)
 # NO_INSTALL_HARDLINKS uses symlinks which makes the package 85MB slimmer (8MB instead of 93MB!)
 
 # Add a place for git config files.
@@ -16,7 +15,6 @@ make configure
 make \
     --jobs="$CPU_COUNT" \
     NO_TCLTK=1 \
-    NO_GETTEXT=1 \
     NO_INSTALL_HARDLINKS=1 \
     all strip install
 

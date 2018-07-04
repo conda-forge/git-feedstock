@@ -24,6 +24,7 @@ requirements:
   host:
     - curl      # [unix]
     - expat     # [unix]
+    - gettext   # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
     - perl      # [unix]
@@ -31,6 +32,7 @@ requirements:
   run:
     - curl      # [unix]
     - expat     # [unix]
+    - gettext   # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
     - perl      # [unix]
