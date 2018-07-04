@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# NO_TCLTK disables git-gui
 # NO_INSTALL_HARDLINKS uses symlinks which makes the package 85MB slimmer (8MB instead of 93MB!)
 
 # Add a place for git config files.
@@ -11,10 +10,10 @@ make configure
     --with-gitattributes="${PREFIX}/etc/gitattributes" \
     --with-gitconfig="${PREFIX}/etc/gitconfig" \
     --with-iconv="${PREFIX}/lib" \
-    --with-perl="${PREFIX}/bin/perl"
+    --with-perl="${PREFIX}/bin/perl" \
+    --with-tcltk="${PREFIX}/bin/tclsh"
 make \
     --jobs="$CPU_COUNT" \
-    NO_TCLTK=1 \
     NO_INSTALL_HARDLINKS=1 \
     all strip install
 

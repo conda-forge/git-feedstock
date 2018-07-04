@@ -28,6 +28,7 @@ requirements:
     - libiconv  # [unix]
     - openssl   # [unix]
     - perl      # [unix]
+    - tk        # [unix]
     - zlib      # [unix]
   run:
     - curl      # [unix]
@@ -36,6 +37,7 @@ requirements:
     - libiconv  # [unix]
     - openssl   # [unix]
     - perl      # [unix]
+    - tk        # [unix]
     - zlib      # [unix]
 
 test:
@@ -46,6 +48,7 @@ test:
 
     # Verify interactive support.
     - test -f $PREFIX/libexec/git-core/git-add--interactive  # [unix]
+    - test -f $PREFIX/libexec/git-core/git-gui               # [unix]
 
     # Run git commands.
     - git --version
