@@ -27,12 +27,14 @@ requirements:
     - expat     # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
+    - perl      # [unix]
     - zlib      # [unix]
   run:
     - curl      # [unix]
     - expat     # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
+    - perl      # [unix]
     - zlib      # [unix]
 
 test:
@@ -40,6 +42,9 @@ test:
     # Verify git location.
     - test -f $PREFIX/bin/git                               # [unix]
     - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1    # [win]
+
+    # Verify interactive support.
+    - test -f $PREFIX/libexec/git-core/git-add--interactive  # [unix]
 
     # Run git commands.
     - git --version
