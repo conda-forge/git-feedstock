@@ -1,16 +1,5 @@
 #!/bin/bash
 
-export C_INCLUDE_PATH="${PREFIX}/include"
-export LIBRARY_PATH="${PREFIX}/lib"
-
-if [ "$(uname)" == "Darwin" ]
-then
-    export LDFLAGS="-Wl,-rpath,$PREFIX/lib"
-elif [ "$(uname)" == "Linux" ]
-then
-    export LDFLAGS="-Wl,-rpath=$PREFIX/lib"
-fi
-
 # NO_TCLTK disables git-gui
 # NO_PERL disables all perl-based utils:
 #   git-instaweb, gitweb, git-cvsserver, git-svn

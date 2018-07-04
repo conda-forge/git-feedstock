@@ -12,29 +12,28 @@ source:
   sha256: cd84a13b6c7aac0e924cb4db2476e2f4379aab4b8e60246992a6c5eebeac360c  # [win64]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and not py27]
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
 
 requirements:
   build:
-    - autoconf        # [unix]
-    - curl >=7.44.0,<8  # [unix]
-    - expat 2.2.*           # [unix]
-    - libiconv 1.15        # [unix]
-    - openssl 1.0.*   # [unix]
-    - zlib 1.2.11      # [unix]
-    - 7za             # [win]
-
-    # Workaround for conda-build issue.
-    - python          # [win]
+    - {{ compiler('c') }}
+    - autoconf  # [unix]
+    - 7za       # [win]
+  host:
+    - curl      # [unix]
+    - expat     # [unix]
+    - libiconv  # [unix]
+    - openssl   # [unix]
+    - zlib      # [unix]
   run:
-    - curl >=7.44.0,<8  # [unix]
-    - expat 2.2.*           # [unix]
-    - libiconv 1.15        # [unix]
-    - openssl 1.0.*   # [unix]
-    - zlib 1.2.11      # [unix]
+    - curl      # [unix]
+    - expat     # [unix]
+    - libiconv  # [unix]
+    - openssl   # [unix]
+    - zlib      # [unix]
 
 test:
   commands:
@@ -54,6 +53,7 @@ test:
 about:
   home: https://git-scm.com/
   license: GPL v2 and LGPL 2.1
+  license_file: COPYING
   summary: distributed version control system
 
 extra:
