@@ -18,8 +18,9 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
+    - {{ compiler('c') }}  # [unix]
     - autoconf  # [unix]
+    - make      # [unix]
     - 7za       # [win]
   host:
     - curl      # [unix]
@@ -48,7 +49,7 @@ test:
 
     # Verify interactive support.
     - test -f $PREFIX/libexec/git-core/git-add--interactive  # [unix]
-    - test -f $PREFIX/libexec/git-core/git-gui               # [unix]
+    - test -f $PREFIX/libexec/git-core/gitk                  # [unix]
 
     # Run git commands.
     - git --version
