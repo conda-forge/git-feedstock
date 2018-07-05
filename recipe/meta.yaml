@@ -7,40 +7,53 @@ package:
 source:
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz  # [not win]
   sha256: 93993babac690a06906d832a1715c3315b4787a2845aeb500f7dcc82e1599df2  # [not win]
+  patches:                                              # [not win]
+    - 0001-macOS-Do-not-use-the-system-Wish-urgh.patch  # [not win]
 
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
   sha256: cd84a13b6c7aac0e924cb4db2476e2f4379aab4b8e60246992a6c5eebeac360c  # [win64]
 
 build:
-  number: 0
-  skip: true  # [win and not py27]
+  number: 1
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
+  # we don't actually build on windows, don't need multiple VC builds
+  skip: true  # [win and vc!=14]
 
 requirements:
   build:
-    - autoconf        # [unix]
-    - curl >=7.44.0,<8  # [unix]
-    - expat 2.2.*           # [unix]
-    - libiconv 1.15        # [unix]
-    - openssl 1.0.*   # [unix]
-    - zlib 1.2.11      # [unix]
-    - 7za             # [win]
-
-    # Workaround for conda-build issue.
-    - python          # [win]
+    - {{ compiler('c') }}  # [unix]
+    - autoconf  # [unix]
+    - make      # [unix]
+    - 7za       # [win]
+  host:
+    - curl      # [unix]
+    - expat     # [unix]
+    - gettext   # [unix]
+    - libiconv  # [unix]
+    - openssl   # [unix]
+    - perl      # [unix]
+    - tk        # [unix]
+    - zlib      # [unix]
   run:
-    - curl >=7.44.0,<8  # [unix]
-    - expat 2.2.*           # [unix]
-    - libiconv 1.15        # [unix]
-    - openssl 1.0.*   # [unix]
-    - zlib 1.2.11      # [unix]
+    - curl      # [unix]
+    - expat     # [unix]
+    - gettext   # [unix]
+    - libiconv  # [unix]
+    - openssl   # [unix]
+    - perl      # [unix]
+    - tk        # [unix]
+    - zlib      # [unix]
 
 test:
   commands:
     # Verify git location.
     - test -f $PREFIX/bin/git                               # [unix]
+    - test -f $PREFIX/bin/gitk                              # [unix]
     - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1    # [win]
+
+    # Verify interactive support.
+    - test -f $PREFIX/libexec/git-core/git-add--interactive  # [unix]
 
     # Run git commands.
     - git --version
@@ -54,6 +67,7 @@ test:
 about:
   home: https://git-scm.com/
   license: GPL v2 and LGPL 2.1
+  license_file: COPYING  # [not win]
   summary: distributed version control system
 
 extra:
@@ -63,3 +77,4 @@ extra:
     - pelson
     - scopatz
     - ocefpaf
+    - dougalsutherland

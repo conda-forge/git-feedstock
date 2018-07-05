@@ -1,0 +1,31 @@
+c_compiler:
+- toolchain_c
+curl:
+- '7.59'
+expat:
+- '2.2'
+libiconv:
+- '1.15'
+openssl:
+- 1.0.2
+perl:
+- '5.26'
+pin_run_as_build:
+  curl:
+    max_pin: x
+  expat:
+    max_pin: x.x
+  libiconv:
+    max_pin: x.x
+  openssl:
+    max_pin: x.x.x
+  perl:
+    max_pin: x.x
+  tk:
+    max_pin: x.x
+  zlib:
+    max_pin: x.x
+tk:
+- '8.6'
+zlib:
+- '1.2'
