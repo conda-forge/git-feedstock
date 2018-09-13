@@ -1,4 +1,4 @@
-{% set version = "2.18.0" %}
+{% set version = "2.19.0" %}
 
 package:
   name: git
@@ -6,15 +6,15 @@ package:
 
 source:
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz  # [not win]
-  sha256: 93993babac690a06906d832a1715c3315b4787a2845aeb500f7dcc82e1599df2  # [not win]
+  sha256: c4146d94d1c74de0d099bcd6ba22cc44f799332a46146ede4ad9c9f67971aa28  # [not win]
   patches:                                              # [not win]
     - 0001-macOS-Do-not-use-the-system-Wish-urgh.patch  # [not win]
 
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
-  sha256: cd84a13b6c7aac0e924cb4db2476e2f4379aab4b8e60246992a6c5eebeac360c  # [win64]
+  sha256: 1b8761ae57f589890a83995d0da7891efbddfee14e9f0c3ffda91f6add5b9351  # [win64]
 
 build:
-  number: 1
+  number: 0
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
   # we don't actually build on windows, don't need multiple VC builds
