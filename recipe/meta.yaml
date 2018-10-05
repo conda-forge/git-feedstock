@@ -1,4 +1,4 @@
-{% set version = "2.19.0" %}
+{% set version = "2.19.1" %}
 
 package:
   name: git
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz  # [not win]
-  sha256: c4146d94d1c74de0d099bcd6ba22cc44f799332a46146ede4ad9c9f67971aa28  # [not win]
+  sha256: ba2fed9d02e424b735e035c4f2b0bdb168ef0df7e35156b5051d900dc7247787  # [not win]
   patches:                                              # [not win]
     - 0001-macOS-Do-not-use-the-system-Wish-urgh.patch  # [not win]
 
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
-  sha256: 1b8761ae57f589890a83995d0da7891efbddfee14e9f0c3ffda91f6add5b9351  # [win64]
+  sha256: 419fc2141b5d17c5ad73d9b2306cd3b2f5114c50bd67558cdc538da2c8e67b66  # [win64]
 
 build:
   number: 0
