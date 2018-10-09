@@ -14,7 +14,7 @@ source:
   sha256: 419fc2141b5d17c5ad73d9b2306cd3b2f5114c50bd67558cdc538da2c8e67b66  # [win64]
 
 build:
-  number: 0
+  number: 1000
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
   # we don't actually build on windows, don't need multiple VC builds
