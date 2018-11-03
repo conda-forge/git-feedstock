@@ -17,8 +17,6 @@ build:
   number: 1000
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
-  # we don't actually build on windows, don't need multiple VC builds
-  skip: true  # [win and vc!=14]
 
 requirements:
   build:
