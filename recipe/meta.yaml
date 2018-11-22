@@ -1,4 +1,4 @@
-{% set version = "2.19.1" %}
+{% set version = "2.19.2" %}
 
 package:
   name: git
@@ -6,15 +6,15 @@ package:
 
 source:
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz  # [not win]
-  sha256: ba2fed9d02e424b735e035c4f2b0bdb168ef0df7e35156b5051d900dc7247787  # [not win]
+  sha256: 9f0a07698d92566400a9ebed97e945581a5001e5de1e4943ba28014fad57d554  # [not win]
   patches:                                              # [not win]
     - 0001-macOS-Do-not-use-the-system-Wish-urgh.patch  # [not win]
 
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
-  sha256: 419fc2141b5d17c5ad73d9b2306cd3b2f5114c50bd67558cdc538da2c8e67b66  # [win64]
+  sha256: 49b2b8bfb84088b22d7618ca4395a53846d5c39a7814554a61b44d753606df4e  # [win64]
 
 build:
-  number: 1001
+  number: 1000
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
 
