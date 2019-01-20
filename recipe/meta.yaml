@@ -14,7 +14,7 @@ source:
   sha256: 4c0fc0c77d577f8dbb3d7711283458ba1d0ce1781cfe0d49c940abbcdf18faa0  # [win64]
 
 build:
-  number: 1000
+  number: 1001
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
 
@@ -48,6 +48,7 @@ test:
     # Verify git location.
     - test -f $PREFIX/bin/git                               # [unix]
     - test -f $PREFIX/bin/gitk                              # [unix]
+    - test -f $PREFIX/bin/git-credential-osxkeychain        # [osx]
     - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1    # [win]
 
     # Verify interactive support.
@@ -56,6 +57,9 @@ test:
     # Run git commands.
     - git --version
     - git clone https://github.com/conda-forge/git-feedstock
+
+    # Git credential commands
+    - git-credential-osxkeychain 2>&1 | grep -q usage  # [osx]
 
     # test completions
     - bash $PREFIX/share/bash-completion/completions/git  # [unix]
