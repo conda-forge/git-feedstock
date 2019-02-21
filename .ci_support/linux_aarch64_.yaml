@@ -11,7 +11,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 curl:
-- '7.59'
+- '7.61'
 docker_image:
 - condaforge/linux-anvil-aarch64
 expat:
