@@ -45,7 +45,7 @@ requirements:
     - gettext   # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
-    - pcre      # []unix
+    - pcre      # [unix]
     - perl      # [unix]
     - tk        # [unix]
     - zlib      # [unix]
