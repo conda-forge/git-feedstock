@@ -42,4 +42,5 @@ cp contrib/completion/git-completion.bash $PREFIX/share/bash-completion/completi
 popd # code
 
 # Install manpages
+mkdir -p $PREFIX/man
 cp -r manpages/* $PREFIX/man
