@@ -5,6 +5,8 @@
 # pcre-feedstock recipe does not include --enable-jit
 export NO_LIBPCRE1_JIT=1
 
+pushd code
+
 # Add a place for git config files.
 mkdir -p $PREFIX/etc
 make configure
@@ -37,4 +39,7 @@ git config --system http.sslCAInfo "${PREFIX}/ssl/cacert.pem"
 mkdir -p $PREFIX/share/bash-completion/completions
 cp contrib/completion/git-completion.bash $PREFIX/share/bash-completion/completions/git
 
+popd # code
 
+# Install manpages
+cp -r manpages/* $PREFIX/man
