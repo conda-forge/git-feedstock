@@ -2,6 +2,9 @@
 
 # NO_INSTALL_HARDLINKS uses symlinks which makes the package 85MB slimmer (8MB instead of 93MB!)
 
+# pcre-feedstock recipe does not include --enable-jit
+export NO_LIBPCRE1_JIT=1
+
 # Add a place for git config files.
 mkdir -p $PREFIX/etc
 make configure
@@ -9,6 +12,7 @@ make configure
     --prefix="${PREFIX}" \
     --with-gitattributes="${PREFIX}/etc/gitattributes" \
     --with-gitconfig="${PREFIX}/etc/gitconfig" \
+    --with-libpcre1 \
     --with-iconv="${PREFIX}/lib" \
     --with-perl="${PREFIX}/bin/perl" \
     --with-tcltk="${PREFIX}/bin/tclsh"
