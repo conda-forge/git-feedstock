@@ -1,4 +1,4 @@
-{% set version = "2.23.0" %}
+{% set version = "2.24.0" %}
 
 package:
   name: git
@@ -19,7 +19,7 @@ source:
     sha256: 501d8be861ebb8694df3f47f1f673996b1d1672e12559d4a07fae7a2eca3afc7  # [win64]
 
 build:
-  number: 2
+  number: 0
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
 
