@@ -78,6 +78,7 @@ test:
 
     # confirm toplevel manpage
     - test -f $PREFIX/man/man1/git.1  # [not win]
+    - test -f $PREFIX/share/man/man1/git.1  # [osx]
 
     # confirm toplevel html doc page
     - test -f $PREFIX/share/doc/git/index.html  # [not win]
