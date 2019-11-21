@@ -13,13 +13,16 @@ source:
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-{{ version }}.tar.gz  # [not win]
     folder: manpages  # [not win]
     sha256: ce995f86f441b56ab1fd0788a94786904ae2e2989e7191fd68060003011366d7  # [not win]
+  - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-{{ version }}.tar.gz  # [not win]
+    folder: htmldocs  # [not win]
+    sha256: 650644d0f82a057f3fae934c49625ad972b2566e34852bb3c9b6ad405cd2dbc9  # [not win]
 
   - url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
     folder: .  # [win64]
     sha256: da1480896cf5a18b99b7bcea4b7e7e0fc9c9a1a521fe4c5df03db850381bb5e7  # [win64]
 
 build:
-  number: 0
+  number: 1
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
 
@@ -75,6 +78,9 @@ test:
 
     # confirm toplevel manpage
     - test -f $PREFIX/man/man1/git.1  # [not win]
+
+    # confirm toplevel html doc page
+    - test -f $PREFIX/share/doc/git/index.html  # [not win]
 
 about:
   home: https://git-scm.com/

@@ -44,3 +44,7 @@ popd # code
 # Install manpages
 mkdir -p $PREFIX/man
 cp -r manpages/* $PREFIX/man
+
+# Install htmldocs
+mkdir -p $PREFIX/share/doc/git
+cp -r htmldocs/* $PREFIX/share/doc/git
