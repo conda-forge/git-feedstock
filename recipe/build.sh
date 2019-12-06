@@ -44,3 +44,13 @@ popd # code
 # Install manpages
 mkdir -p $PREFIX/man
 cp -r manpages/* $PREFIX/man
+# Add symlinks in $PREFIX/share/man so that manpages work on macOS
+if [[ $(uname) == "Darwin" ]]; then
+  ln -s $PREFIX/man/man1/git* $PREFIX/share/man/man1/
+  ln -s $PREFIX/man/man5/git* $PREFIX/share/man/man5/
+  ln -s $PREFIX/man/man7/git* $PREFIX/share/man/man7/
+fi
+
+# Install htmldocs
+mkdir -p $PREFIX/share/doc/git
+cp -r htmldocs/* $PREFIX/share/doc/git
