@@ -1,4 +1,4 @@
-{% set version = "2.25.0" %}
+{% set version = "2.25.1" %}
 
 package:
   name: git
