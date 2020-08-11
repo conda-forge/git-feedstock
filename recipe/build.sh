@@ -31,6 +31,7 @@ if [[ $(uname) == "Darwin" ]]; then
   popd
 fi
 
+git config --system http.sslVerify true
 
 # Install completion files
 mkdir -p $PREFIX/share/bash-completion/completions
