@@ -5,11 +5,9 @@ Home: https://git-scm.com/
 
 Package license: GPL v2 and LGPL 2.1
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/git-feedstock/blob/master/LICENSE.txt)
 
 Summary: distributed version control system
-
-
 
 Current build status
 ====================
