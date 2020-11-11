@@ -39,7 +39,7 @@ requirements:
     - libiconv  # [unix]
     - openssl   # [unix]
     - pcre      # [unix]
-    - perl      # [unix]
+    - perl 5.*  # [unix]
     - tk        # [unix]
     - zlib      # [unix]
   run:
@@ -49,7 +49,7 @@ requirements:
     - libiconv  # [unix]
     - openssl   # [unix]
     - pcre      # [unix]
-    - perl      # [unix]
+    - perl 5.*  # [unix]
     - tk        # [unix]
     - zlib      # [unix]
 
