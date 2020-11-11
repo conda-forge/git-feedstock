@@ -5,6 +5,12 @@
 # pcre-feedstock recipe does not include --enable-jit
 export NO_LIBPCRE1_JIT=1
 
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 && "$target_platform" == "osx-arm64" ]]; then
+  export ac_cv_iconv_omits_bom=no
+  export ac_cv_fread_reads_directories=yes
+  export ac_cv_snprintf_returns_bogus=no
+fi
+
 pushd code
 
 # Add a place for git config files.
