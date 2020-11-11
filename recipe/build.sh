@@ -30,7 +30,7 @@ make \
     all strip install
 
 # build osxkeychain
-if [[ $(uname) == "Darwin" ]]; then
+if [[ "$target_platform" == osx-* ]]; then
   pushd contrib/credential/osxkeychain
   make -e
   cp -avf git-credential-osxkeychain $PREFIX/bin
