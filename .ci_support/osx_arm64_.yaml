@@ -1,21 +1,21 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '11.0'
 c_compiler:
-- gcc
+- clang
 c_compiler_version:
-- '8'
-cdt_name:
-- cos7
+- '11'
 channel_sources:
-- conda-forge,defaults
+- conda-forge/label/rust_dev,conda-forge,https://conda-web.anaconda.org/conda-forge
 channel_targets:
 - conda-forge main
 curl:
 - '7'
-docker_image:
-- quay.io/condaforge/linux-anvil-ppc64le
 expat:
 - '2.2'
 libiconv:
 - '1.16'
+macos_machine:
+- arm64-apple-darwin20.0.0
 openssl:
 - 1.1.1
 perl:
@@ -31,9 +31,13 @@ pin_run_as_build:
     max_pin: x.x.x
   perl:
     max_pin: x.x.x
+  tk:
+    max_pin: x.x
   zlib:
     max_pin: x.x
 target_platform:
-- linux-ppc64le
+- osx-arm64
+tk:
+- '8.6'
 zlib:
 - '1.2'
