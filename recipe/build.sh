@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 # NO_INSTALL_HARDLINKS uses symlinks which makes the package 85MB slimmer (8MB instead of 93MB!)
 
 # pcre-feedstock recipe does not include --enable-jit
@@ -27,6 +29,7 @@ make configure
 make \
     --jobs="$CPU_COUNT" \
     NO_INSTALL_HARDLINKS=1 \
+    STRIP=$STRIP \
     all strip install
 
 # build osxkeychain
