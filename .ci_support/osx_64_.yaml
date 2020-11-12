@@ -18,8 +18,6 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 openssl:
 - 1.1.1
-perl:
-- 5.26.2
 pin_run_as_build:
   curl:
     max_pin: x
@@ -28,8 +26,6 @@ pin_run_as_build:
   libiconv:
     max_pin: x.x
   openssl:
-    max_pin: x.x.x
-  perl:
     max_pin: x.x.x
   tk:
     max_pin: x.x

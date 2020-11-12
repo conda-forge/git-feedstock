@@ -1,9 +1,17 @@
 #!/bin/bash
 
+set -x
+
 # NO_INSTALL_HARDLINKS uses symlinks which makes the package 85MB slimmer (8MB instead of 93MB!)
 
 # pcre-feedstock recipe does not include --enable-jit
 export NO_LIBPCRE1_JIT=1
+
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 && "$target_platform" == "osx-arm64" ]]; then
+  export ac_cv_iconv_omits_bom=no
+  export ac_cv_fread_reads_directories=yes
+  export ac_cv_snprintf_returns_bogus=no
+fi
 
 pushd code
 
@@ -21,10 +29,11 @@ make configure
 make \
     --jobs="$CPU_COUNT" \
     NO_INSTALL_HARDLINKS=1 \
+    STRIP=$STRIP \
     all strip install
 
 # build osxkeychain
-if [[ $(uname) == "Darwin" ]]; then
+if [[ "$target_platform" == osx-* ]]; then
   pushd contrib/credential/osxkeychain
   make -e
   cp -avf git-credential-osxkeychain $PREFIX/bin
@@ -37,9 +46,12 @@ then
 else
     cert_file="${REQUESTS_CA_BUNDLE}"
 fi
-git config --system http.sslVerify true
-git config --system http.sslCAPath "${cert_file}"
-git config --system http.sslCAInfo "${cert_file}"
+
+mkdir -p $PREFIX/etc
+echo "[http]"                            >  $PREFIX/etc/gitconfig
+echo "        sslVerify = true"          >> $PREFIX/etc/gitconfig
+echo "        sslCAPath = ${cert_file}"  >> $PREFIX/etc/gitconfig
+echo "        sslCAInfo = ${cert_file}"  >> $PREFIX/etc/gitconfig
 
 # Install completion files
 mkdir -p $PREFIX/share/bash-completion/completions

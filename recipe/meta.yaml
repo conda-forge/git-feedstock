@@ -32,15 +32,15 @@ requirements:
     - autoconf  # [unix]
     - make      # [unix]
     - 7za       # [win]
+    - tk        # [unix]
+    - gettext   # [unix]
   host:
     - curl      # [unix]
     - expat     # [unix]
-    - gettext   # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
     - pcre      # [unix]
-    - perl      # [unix]
-    - tk        # [unix]
+    - perl 5.*  # [unix]
     - zlib      # [unix]
   run:
     - curl      # [unix]
@@ -49,7 +49,7 @@ requirements:
     - libiconv  # [unix]
     - openssl   # [unix]
     - pcre      # [unix]
-    - perl      # [unix]
+    - perl 5.*  # [unix]
     - tk        # [unix]
     - zlib      # [unix]
 
