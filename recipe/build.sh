@@ -47,17 +47,11 @@ else
     cert_file="${REQUESTS_CA_BUNDLE}"
 fi
 
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
-  mkdir -p $PREFIX/etc
-  echo "[http]"                            >  $PREFIX/etc/gitconfig
-  echo "        sslVerify = true"          >> $PREFIX/etc/gitconfig
-  echo "        sslCAPath = ${cert_file}"  >> $PREFIX/etc/gitconfig
-  echo "        sslCAInfo = ${cert_file}"  >> $PREFIX/etc/gitconfig
-else
-  git config --system http.sslVerify true
-  git config --system http.sslCAPath "${cert_file}"
-  git config --system http.sslCAInfo "${cert_file}"
-fi
+mkdir -p $PREFIX/etc
+echo "[http]"                            >  $PREFIX/etc/gitconfig
+echo "        sslVerify = true"          >> $PREFIX/etc/gitconfig
+echo "        sslCAPath = ${cert_file}"  >> $PREFIX/etc/gitconfig
+echo "        sslCAInfo = ${cert_file}"  >> $PREFIX/etc/gitconfig
 
 # Install completion files
 mkdir -p $PREFIX/share/bash-completion/completions
