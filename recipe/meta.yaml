@@ -22,7 +22,7 @@ source:
     sha256: 7d114e81a541536b025313efcdf6feea1e973323f2b8f53995721bfd511139bd  # [win64]
 
 build:
-  number: 0
+  number: 1
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
 
@@ -73,8 +73,6 @@ test:
 
     # test completions
     - bash $PREFIX/share/bash-completion/completions/git  # [unix]
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
     # confirm toplevel manpage
     - test -f $PREFIX/man/man1/git.1  # [not win]
