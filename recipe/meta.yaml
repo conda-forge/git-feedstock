@@ -83,7 +83,7 @@ test:
 
 about:
   home: https://git-scm.com/
-  license: GPL v2 and LGPL 2.1
+  license: GPL-2.0-or-later and LGPL-2.1-or-later
   license_file: code/COPYING  # [not win]
   summary: distributed version control system
 
