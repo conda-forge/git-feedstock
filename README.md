@@ -3,7 +3,7 @@ About git
 
 Home: https://git-scm.com/
 
-Package license: GPL v2 and LGPL 2.1
+Package license: GPL-2.0-or-later and LGPL-2.1-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/git-feedstock/blob/master/LICENSE.txt)
 
