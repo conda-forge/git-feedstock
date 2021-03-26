@@ -22,7 +22,7 @@ source:
     sha256: f719f248de3dd7ef234331f8da95762594a388f6aa62f4c0260df18068e5a447  # [win64]
 
 build:
-  number: 0
+  number: 1
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
 
