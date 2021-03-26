@@ -11,7 +11,7 @@ channel_targets:
 curl:
 - '7'
 expat:
-- '2.2'
+- '2.3'
 libiconv:
 - '1.16'
 macos_machine:

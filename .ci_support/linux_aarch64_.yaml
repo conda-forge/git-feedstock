@@ -17,7 +17,7 @@ curl:
 docker_image:
 - quay.io/condaforge/linux-anvil-aarch64
 expat:
-- '2.2'
+- '2.3'
 libiconv:
 - '1.16'
 openssl:
