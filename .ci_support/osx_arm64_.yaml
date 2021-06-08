@@ -11,7 +11,7 @@ channel_targets:
 curl:
 - '7'
 expat:
-- '2.3'
+- '2'
 libiconv:
 - '1.16'
 macos_machine:
@@ -23,8 +23,6 @@ pcre:
 pin_run_as_build:
   curl:
     max_pin: x
-  expat:
-    max_pin: x.x
   libiconv:
     max_pin: x.x
   openssl:
