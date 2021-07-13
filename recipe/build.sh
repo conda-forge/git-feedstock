@@ -4,9 +4,6 @@ set -x
 
 # NO_INSTALL_HARDLINKS uses symlinks which makes the package 85MB slimmer (8MB instead of 93MB!)
 
-# pcre-feedstock recipe does not include --enable-jit
-export NO_LIBPCRE1_JIT=1
-
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 && "$target_platform" == "osx-arm64" ]]; then
   export ac_cv_iconv_omits_bom=no
   export ac_cv_fread_reads_directories=yes
@@ -22,7 +19,7 @@ make configure
     --prefix="${PREFIX}" \
     --with-gitattributes="${PREFIX}/etc/gitattributes" \
     --with-gitconfig="${PREFIX}/etc/gitconfig" \
-    --with-libpcre1 \
+    --with-libpcre \
     --with-iconv="${PREFIX}/lib" \
     --with-perl="${PREFIX}/bin/perl" \
     --with-tcltk="${PREFIX}/bin/tclsh"

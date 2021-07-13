@@ -1,4 +1,4 @@
-{% set version = "2.30.2" %}
+{% set version = "2.31.0" %}
 
 package:
   name: git
@@ -7,22 +7,22 @@ package:
 source:
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-{{ version }}.tar.gz  # [not win]
     folder: code  # [not win]
-    sha256: 9ddea08fc7c38f1823a54a014ae2e9ecd45e1b4a06e919025f4c41f2c6a8061b  # [not win]
+    sha256: bc6168777883562569144d536e8a855b12d25d46870d95188a3064260d7784ee  # [not win]
     patches:   # [not win]
       - 0001-macOS-Do-not-use-the-system-Wish-urgh.patch  # [not win]
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-{{ version }}.tar.gz  # [not win]
     folder: manpages  # [not win]
-    sha256: c62cb68b551214e61f0de87e7217938020bcc708011100612760812ea494b1d4  # [not win]
+    sha256: a51b760c36be19113756839a9110b328a09abfff0d57f1c93ddac3974ccbc238  # [not win]
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-{{ version }}.tar.gz  # [not win]
     folder: htmldocs  # [not win]
-    sha256: a0e437c819b71588130d97eacd38edb9e886255b02845dfd44305dfc58bc7b80  # [not win]
+    sha256: 7867d4f57e92d9c156bf30466c001f2119ef10365c5ecda2bd6983c10f368812  # [not win]
 
   - url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
     folder: .  # [win64]
-    sha256: f719f248de3dd7ef234331f8da95762594a388f6aa62f4c0260df18068e5a447  # [win64]
+    sha256: 2ee5489f844362f6b079be7aa0811abdbe99b4538d66485ca996da2d144fb466  # [win64]
 
 build:
-  number: 1
+  number: 0
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
 
@@ -39,7 +39,7 @@ requirements:
     - expat     # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
-    - pcre      # [unix]
+    - pcre2     # [unix]
     - perl 5.*  # [unix]
     - zlib      # [unix]
   run:
@@ -48,7 +48,7 @@ requirements:
     - gettext   # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
-    - pcre      # [unix]
+    - pcre2     # [unix]
     - perl 5.*  # [unix]
     - tk        # [unix]
     - zlib      # [unix]
