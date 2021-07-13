@@ -39,7 +39,7 @@ requirements:
     - expat     # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
-    - pcre      # [unix]
+    - pcre2     # [unix]
     - perl 5.*  # [unix]
     - zlib      # [unix]
   run:
@@ -48,7 +48,7 @@ requirements:
     - gettext   # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
-    - pcre      # [unix]
+    - pcre2     # [unix]
     - perl 5.*  # [unix]
     - tk        # [unix]
     - zlib      # [unix]
