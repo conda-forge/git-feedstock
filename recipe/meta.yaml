@@ -25,6 +25,8 @@ build:
   number: 1
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
+  ignore_run_exports_from:
+    - perl 5.*  # [unix]
 
 requirements:
   build:
