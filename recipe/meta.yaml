@@ -22,7 +22,7 @@ source:
     sha256: 71294d3008d6da6bd25527498ff726d09d55c2cbd1af32d8e99200d5339d7817  # [win64]
 
 build:
-  number: 0
+  number: 1
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
   ignore_run_exports_from:
@@ -45,15 +45,11 @@ requirements:
     - perl 5.*  # [unix]
     - zlib      # [unix]
   run:
+    # Without the explicit dependency on curl, it seems
+    # that linux_64 fails on the symbol lookup for curl_global_sslset
     - curl      # [unix]
-    - expat     # [unix]
     - gettext   # [unix]
-    - libiconv  # [unix]
-    - openssl   # [unix]
-    - pcre2     # [unix]
     - perl 5.*  # [unix]
-    - tk        # [unix]
-    - zlib      # [unix]
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
