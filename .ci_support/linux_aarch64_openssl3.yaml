@@ -19,20 +19,11 @@ docker_image:
 expat:
 - '2'
 libiconv:
-- '1.16'
+- '1'
 openssl:
 - '3'
 pcre2:
 - '10.37'
-pin_run_as_build:
-  curl:
-    max_pin: x
-  libiconv:
-    max_pin: x.x
-  tk:
-    max_pin: x.x
-  zlib:
-    max_pin: x.x
 target_platform:
 - linux-aarch64
 tk:
