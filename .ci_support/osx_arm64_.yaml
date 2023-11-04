@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '15'
+- '16'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -19,7 +19,7 @@ macos_machine:
 openssl:
 - '3'
 pcre2:
-- '10.40'
+- '10.42'
 target_platform:
 - osx-arm64
 tk:
