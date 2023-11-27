@@ -23,7 +23,7 @@ libiconv:
 openssl:
 - '3'
 pcre2:
-- '10.40'
+- '10.42'
 target_platform:
 - linux-aarch64
 tk:
