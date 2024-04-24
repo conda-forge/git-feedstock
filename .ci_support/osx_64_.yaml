@@ -16,10 +16,10 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-curl:
-- '8'
 expat:
 - '2'
+libcurl:
+- '8'
 libiconv:
 - '1'
 macos_machine:
