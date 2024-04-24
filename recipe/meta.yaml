@@ -39,7 +39,7 @@ requirements:
     - tk        # [unix]
     - gettext-tools   # [unix]
   host:
-    - curl      # [unix]
+    - libcurl   # [unix]
     - expat     # [unix]
     - libiconv  # [unix]
     - openssl   # [unix]
@@ -49,7 +49,6 @@ requirements:
   run:
     # Without the explicit dependency on curl, it seems
     # that linux_64 fails on the symbol lookup for curl_global_sslset
-    - curl      # [unix]
     - perl 5.*  # [unix]
 
 test:
