@@ -30,7 +30,7 @@ build:
 
 requirements:
   build:
-    - {{ stdlib('c') }}    # [unix]
+    - {{ stdlib('c') }}    # [unix]
     - {{ compiler('c') }}  # [unix]
     - {{ stdlib("c") }}    # [unix]
     - autoconf  # [unix]
