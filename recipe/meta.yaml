@@ -22,7 +22,7 @@ source:
     sha256: e9caf1cab7d2c1dc531a07c48445d84a8b27fae129ca7244e0d4f7b1e4949f60  # [win64]
 
 build:
-  number: 0
+  number: 1
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
   ignore_run_exports_from:
@@ -30,13 +30,14 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}    # [unix]
     - {{ compiler('c') }}  # [unix]
     - {{ stdlib("c") }}    # [unix]
     - autoconf  # [unix]
     - make      # [unix]
     - 7za       # [win]
     - tk        # [unix]
-    - gettext   # [unix]
+    - gettext-tools   # [unix]
   host:
     - curl      # [unix]
     - expat     # [unix]
@@ -49,7 +50,6 @@ requirements:
     # Without the explicit dependency on curl, it seems
     # that linux_64 fails on the symbol lookup for curl_global_sslset
     - curl      # [unix]
-    - gettext   # [unix]
     - perl 5.*  # [unix]
 
 test:
