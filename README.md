@@ -3,6 +3,19 @@ About git-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/git-feedstock/blob/main/LICENSE.txt)
 
+
+About git
+---------
+
+Home: https://git-scm.com/
+
+Package license: GPL-2.0-or-later and LGPL-2.1-or-later
+
+Summary: distributed version control system
+
+About git
+---------
+
 Home: https://git-scm.com/
 
 Package license: GPL-2.0-or-later and LGPL-2.1-or-later

@@ -1,11 +1,11 @@
---- git-2.43.0.orig/Makefile	2023-11-19 23:07:41.000000000 -0300
-+++ git-2.43.0/Makefile	2023-11-27 11:33:08.700025771 -0300
-@@ -1536,7 +1536,7 @@
+--- git-2.45.0.orig/Makefile	2024-04-29 18:19:22.000000000 +0200
++++ git-2.45.0/Makefile	2024-04-30 18:49:09.370208023 +0200
+@@ -1557,7 +1557,7 @@
  	BASIC_CFLAGS += -Dsocklen_t=$(SOCKLEN_T)
  endif
  
 -ifeq ($(uname_S),Darwin)
 +ifeq ($(uname_S),Darwin_no_thanks)
- 	ifndef NO_FINK
- 		ifeq ($(shell test -d /sw/lib && echo y),y)
+         ifndef NO_FINK
+                 ifeq ($(shell test -d /sw/lib && echo y),y)
  			BASIC_CFLAGS += -I/sw/include
