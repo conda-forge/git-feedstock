@@ -1,4 +1,4 @@
-{% set version = "2.45.2" %}
+{% set version = "2.46.0" %}
 
 package:
   name: git
@@ -7,22 +7,22 @@ package:
 source:
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-{{ version }}.tar.gz  # [not win]
     folder: code  # [not win]
-    sha256: 98b26090ed667099a3691b93698d1e213e1ded73d36a2fde7e9125fce28ba234  # [not win]
+    sha256: b138811e16838f669a2516e40f09d50500e1c7fc541b5ab50ce84b98585e5230  # [not win]
     patches:   # [not win]
       - 0001-macOS-Do-not-use-the-system-Wish-urgh.patch  # [not win]
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-{{ version }}.tar.gz  # [not win]
     folder: manpages  # [not win]
-    sha256: 48c1e2e3ecbb2ce9faa020a19fcdbc6ce64ea25692111b5930686bc0bb4f0e7f  # [not win]
+    sha256: a1b1853311d734ca242fcb2163cd57d8e8b49563cd17cd3d080cfca52f69deb5  # [not win]
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-{{ version }}.tar.gz  # [not win]
     folder: htmldocs  # [not win]
-    sha256: 5fe5c94364637f08928d081d377e15bbd0e74d56bdec794c2e9ed3a9fdedc8a9  # [not win]
+    sha256: 60334c09e562addc9e10c2162c3bda1c66957de0f0515c93ce22b2bd3d8947a1  # [not win]
 
   - url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
     folder: .  # [win64]
-    sha256: 851a15074dea6b272785b2a2a4697a72970256de2afe7b8e4a9c5e168c27ccdd  # [win64]
+    sha256: dedae83f4d0851bcbf473c516701e2da6a5d7c574d694d5eceec46d1307132ea  # [win64]
 
 build:
-  number: 1
+  number: 0
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
   ignore_run_exports_from:
