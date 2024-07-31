@@ -1,5 +1,3 @@
-MACOSX_DEPLOYMENT_TARGET:  # This appears to be require to sate the linter
-- '2.17'
 c_compiler:
 - gcc
 c_compiler_version:
