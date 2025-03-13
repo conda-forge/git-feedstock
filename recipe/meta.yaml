@@ -22,7 +22,7 @@ source:
     sha256: a4335111b3363871cac632be93d7466154d8eb08782ff55103866b67d6722257  # [win64]
 
 build:
-  number: 0
+  number: 1
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
   ignore_run_exports_from:
@@ -36,7 +36,6 @@ requirements:
     - autoconf  # [unix]
     - make      # [unix]
     - 7za       # [win]
-    - tk        # [unix]
     - gettext-tools   # [unix]
   host:
     - libintl-devel  # [osx]
@@ -46,6 +45,7 @@ requirements:
     - openssl        # [unix]
     - pcre2          # [unix]
     - perl 5.*       # [unix]
+    - tk             # [unix]
     - zlib           # [unix]
   run:
     # Without the explicit dependency on curl, it seems
