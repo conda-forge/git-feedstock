@@ -36,7 +36,6 @@ requirements:
     - autoconf  # [unix]
     - make      # [unix]
     - 7za       # [win]
-    - tk        # [unix]
     - gettext-tools   # [unix]
   host:
     - libintl-devel  # [osx]
@@ -46,6 +45,7 @@ requirements:
     - openssl        # [unix]
     - pcre2          # [unix]
     - perl 5.*       # [unix]
+    - tk             # [unix]
     - zlib           # [unix]
   run:
     # Without the explicit dependency on curl, it seems
