@@ -7,7 +7,10 @@
         "script": "${PREFIX}/Library/bin/bash.exe",
         "scriptarguments": ["--login", "-i", "--"],
         "workdir": "${PERSONALDIR}",
-        "icon": "${MENU_DIR}/git-for-windows.ico"
+        "icon": "${MENU_DIR}/git-for-windows.ico",
+        "platforms": {
+          "win": {}
+        }
     }
     ]
 }
