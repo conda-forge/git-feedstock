@@ -22,7 +22,7 @@ make configure
     --with-libpcre \
     --with-iconv="${PREFIX}/lib" \
     --with-perl="${PREFIX}/bin/perl" \
-    --with-tcltk="${PREFIX}/bin/tclsh"
+    --with-tcltk="${PREFIX}/bin/wish"
 make \
     --jobs="$CPU_COUNT" \
     NO_INSTALL_HARDLINKS=1 \
