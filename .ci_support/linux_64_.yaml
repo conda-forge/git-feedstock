@@ -19,7 +19,7 @@ libcurl:
 libiconv:
 - '1'
 openssl:
-- '3'
+- '3.5'
 pcre2:
 - '10.46'
 target_platform:
