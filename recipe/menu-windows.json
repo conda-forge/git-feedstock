@@ -1,10 +1,11 @@
 {
-    "menu_name": "Anaconda${PY_VER} ${PLATFORM}",
+    "menu_name": "${DISTRIBUTION_NAME}",
     "menu_items":
     [
     {
         "name": "Git Bash",
         "script": "${PREFIX}/Library/bin/bash.exe",
+        "description": "Bash Shell",
         "scriptarguments": ["--login", "-i", "--"],
         "workdir": "${PERSONALDIR}",
         "icon": "${MENU_DIR}/git-for-windows.ico",
