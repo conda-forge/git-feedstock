@@ -21,7 +21,7 @@ libiconv:
 openssl:
 - '3.5'
 pcre2:
-- '10.46'
+- '10.47'
 target_platform:
 - linux-64
 tk:
