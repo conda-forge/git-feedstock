@@ -30,8 +30,11 @@ make \
     all strip install
 
 # build osxkeychain
+# Since git 2.53.0, the osxkeychain helper depends on internal git headers and libgit.a.
+# Its Makefile sets CFLAGS with -I../../.. via ?=, but conda-build's exported CFLAGS
+# overrides that. Pass CFLAGS on the command line to ensure the include path is present.
 if [[ "$target_platform" == osx-* ]]; then
-  make -C contrib/credential/osxkeychain
+  make -C contrib/credential/osxkeychain CFLAGS="${CFLAGS} -I../../.."
   cp -avf contrib/credential/osxkeychain/git-credential-osxkeychain $PREFIX/bin
 fi
 
