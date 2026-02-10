@@ -31,10 +31,8 @@ make \
 
 # build osxkeychain
 if [[ "$target_platform" == osx-* ]]; then
-  pushd contrib/credential/osxkeychain
-  make -e
-  cp -avf git-credential-osxkeychain $PREFIX/bin
-  popd
+  make -C contrib/credential/osxkeychain
+  cp -avf contrib/credential/osxkeychain/git-credential-osxkeychain $PREFIX/bin
 fi
 
 if [[ -z "${REQUESTS_CA_BUNDLE}" ]] 
