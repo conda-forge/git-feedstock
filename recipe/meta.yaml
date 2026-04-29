@@ -22,8 +22,9 @@ source:
     sha256: 08713a710ec91ac90de1c09f861289a3b103175f098676e5e664c04dd6c6bf23  # [win64]
 
 build:
-  number: 0
+  number: 1
   # git hardcodes paths to external utilities (e.g. curl)
+  # TODO does RUNTIME_PREFIX remove the need for this?
   detect_binary_files_with_prefix: true
   ignore_run_exports_from:
     - perl 5.*  # [unix]
@@ -76,6 +77,11 @@ test:
 
     # confirm toplevel html doc page
     - test -f $PREFIX/share/doc/git/index.html  # [not win]
+
+    # does RUNTIME_PREFIX fix the shebang for git-p4?
+    - which python  # [unix]
+    - head -n1 $PREFIX/libexec/git-core/git-p4  # [unix]
+    - git p4 clone --help  # [unix]
 
 about:
   home: https://git-scm.com/

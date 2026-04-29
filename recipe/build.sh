@@ -3,6 +3,7 @@
 set -x
 
 # NO_INSTALL_HARDLINKS uses symlinks which makes the package 85MB slimmer (8MB instead of 93MB!)
+# RUNTIME_PREFIX reduces hardcoded paths embedded in scripts and binaries
 
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 && "$target_platform" == "osx-arm64" ]]; then
   export ac_cv_iconv_omits_bom=no
@@ -26,6 +27,7 @@ make configure
 make \
     --jobs="$CPU_COUNT" \
     NO_INSTALL_HARDLINKS=1 \
+    RUNTIME_PREFIX=1 \
     STRIP=$STRIP \
     all strip install
 
