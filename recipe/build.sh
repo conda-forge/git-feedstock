@@ -23,9 +23,14 @@ make configure
     --with-iconv="${PREFIX}/lib" \
     --with-perl="${PREFIX}/bin/perl" \
     --with-tcltk="${PREFIX}/bin/tclsh"
+# NO_RUST: since git 2.55.0, optional Rust components are enabled by default,
+# requiring cargo. The Makefile invokes cargo without --target, which breaks
+# cross-compiled builds (osx-arm64, aarch64, ppc64le). Disable until upstream
+# supports CARGO_BUILD_TARGET (Rust becomes mandatory in git 3.0).
 make \
     --jobs="$CPU_COUNT" \
     NO_INSTALL_HARDLINKS=1 \
+    NO_RUST=1 \
     STRIP=$STRIP \
     all strip install
 
@@ -36,6 +41,7 @@ make \
 # Pass both on the command line to ensure they take precedence.
 if [[ "$target_platform" == osx-* ]]; then
   make -C contrib/credential/osxkeychain \
+    NO_RUST=1 \
     CFLAGS="${CFLAGS} -I../../.." \
     LDFLAGS="${LDFLAGS} -lz -liconv -lintl -lpcre2-8"
   cp -avf contrib/credential/osxkeychain/git-credential-osxkeychain $PREFIX/bin
