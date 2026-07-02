@@ -32,6 +32,7 @@ requirements:
   build:
     - {{ stdlib('c') }}    # [unix]
     - {{ compiler('c') }}  # [unix]
+    - {{ compiler('rust') }}  # [unix]
     - {{ stdlib("c") }}    # [unix]
     - autoconf  # [unix]
     - make      # [unix]

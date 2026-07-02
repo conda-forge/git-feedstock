@@ -10,6 +10,15 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 && "$target_platform" == "osx-arm64"
   export ac_cv_snprintf_returns_bogus=no
 fi
 
+# Since git 2.55.0, Rust components are built by default (mandatory in git 3.0).
+# conda-forge's rust activation sets CARGO_BUILD_TARGET (also for native builds),
+# which makes cargo place artifacts in target/<triple>/release instead of
+# target/release where git's Makefile expects them, so point the Makefile there.
+RUST_MAKE_ARGS=()
+if [[ -n "${CARGO_BUILD_TARGET:-}" ]]; then
+  RUST_MAKE_ARGS=(RUST_TARGET_DIR="target/${CARGO_BUILD_TARGET}/release")
+fi
+
 pushd code
 
 # Add a place for git config files.
@@ -27,6 +36,7 @@ make \
     --jobs="$CPU_COUNT" \
     NO_INSTALL_HARDLINKS=1 \
     STRIP=$STRIP \
+    "${RUST_MAKE_ARGS[@]}" \
     all strip install
 
 # build osxkeychain
@@ -36,6 +46,7 @@ make \
 # Pass both on the command line to ensure they take precedence.
 if [[ "$target_platform" == osx-* ]]; then
   make -C contrib/credential/osxkeychain \
+    "${RUST_MAKE_ARGS[@]}" \
     CFLAGS="${CFLAGS} -I../../.." \
     LDFLAGS="${LDFLAGS} -lz -liconv -lintl -lpcre2-8"
   cp -avf contrib/credential/osxkeychain/git-credential-osxkeychain $PREFIX/bin
