@@ -26,6 +26,8 @@ openssl:
 - '3.5'
 pcre2:
 - '10.47'
+rust_compiler:
+- rust
 target_platform:
 - osx-arm64
 tk:
