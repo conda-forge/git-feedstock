@@ -4,7 +4,10 @@ set -x
 
 # NO_INSTALL_HARDLINKS uses symlinks which makes the package 85MB slimmer (8MB instead of 93MB!)
 
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 && "$target_platform" == "osx-arm64" ]]; then
+# configure has three AC_RUN_IFELSE checks that cannot execute when
+# cross-compiling; pre-seed their cache variables with the answers a native
+# build gives on all our targets (glibc/Linux and macOS alike).
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 ]]; then
   export ac_cv_iconv_omits_bom=no
   export ac_cv_fread_reads_directories=yes
   export ac_cv_snprintf_returns_bogus=no
