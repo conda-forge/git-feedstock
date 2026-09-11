@@ -8,9 +8,14 @@ set -x
 # cross-compiling; pre-seed their cache variables with the answers a native
 # build gives on all our targets (glibc/Linux and macOS alike).
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 ]]; then
-  export ac_cv_iconv_omits_bom=no
-  export ac_cv_fread_reads_directories=yes
-  export ac_cv_snprintf_returns_bogus=no
+  if [[ "$target_platform" == "osx-arm64" || "$target_platform" == "osx-64" || "$target_platform" == "linux-riscv64" || "$target_platform" == "linux-ppc64le" || "$target_platform" == "linux-aarch64" ]]; then
+    export ac_cv_iconv_omits_bom=no
+    export ac_cv_fread_reads_directories=yes
+    export ac_cv_snprintf_returns_bogus=no
+  else
+    echo "Unknown platform ${target_platform}"
+    exit 1
+  fi
 fi
 
 # Since git 2.55.0, Rust components are built by default (mandatory in git 3.0).
