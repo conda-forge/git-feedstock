@@ -25,6 +25,8 @@ source:
     fn: PortableGit-{{ version }}.7z.exe  # [win and arm64]
     folder: .  # [win and arm64]
     sha256: b1fe421482c6e5a1aa1135406d7eeb89adf5436b3e5af183cdcd6ffe3c6bc8f2  # [win and arm64]
+  - url: https://raw.githubusercontent.com/git-for-windows/git/v{{ version }}.windows.1/COPYING  # [win]
+    sha256: 5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e  # [win]
 
 build:
   number: 3
@@ -94,6 +96,7 @@ about:
   home: https://git-scm.com/
   license: GPL-2.0-or-later and LGPL-2.1-or-later
   license_file: code/COPYING  # [not win]
+  license_file: COPYING  # [win]
   summary: distributed version control system
 
 extra:

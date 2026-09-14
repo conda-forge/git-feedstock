@@ -2,11 +2,9 @@ PortableGit-%PKG_VERSION%.7z.exe -o"%LIBRARY_PREFIX%\" -y
 if errorlevel 1 exit 1
 
 cd %LIBRARY_PREFIX%
-call post-install.bat
 del git_bash.exe
 del git_cmd.exe
 del README.portable
-del post-install.bat
 
 IF NOT EXIST %PREFIX%\Menu mkdir %PREFIX%\Menu
 copy %RECIPE_DIR%\menu-windows.json %PREFIX%\Menu\
