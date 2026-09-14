@@ -18,11 +18,16 @@ source:
     sha256: 8cc302f07f4d246b556c4f4f57cdc0aa7f13a57f9b5c94629ff8ec26cddf66b5  # [not win]
 
   - url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
+    fn: PortableGit-{{ version }}.7z.exe  # [win64]
     folder: .  # [win64]
     sha256: dfa8cad3ce7e685b9bfbbb2125afcf7c68d4f53490426702ffac367dac62e928  # [win64]
+  - url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-arm64.7z.exe  # [win and arm64]
+    fn: PortableGit-{{ version }}.7z.exe  # [win and arm64]
+    folder: .  # [win and arm64]
+    sha256: b1fe421482c6e5a1aa1135406d7eeb89adf5436b3e5af183cdcd6ffe3c6bc8f2  # [win and arm64]
 
 build:
-  number: 2
+  number: 3
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
   ignore_run_exports_from:
@@ -36,7 +41,6 @@ requirements:
     - {{ stdlib("c") }}    # [unix]
     - autoconf  # [unix]
     - make      # [unix]
-    - 7za       # [win]
     - tk        # [unix]
     - gettext-tools   # [unix]
   host:
@@ -62,8 +66,13 @@ test:
     - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1    # [win]
 
     # Run git commands.
-    - git --version
-    - git clone https://github.com/conda-forge/git-feedstock
+    - git --version  # [unix]
+    - git clone https://github.com/conda-forge/git-feedstock  # [unix]
+    - '"%LIBRARY_PREFIX%\bin\git.exe" version --build-options'  # [win]
+    - '"%LIBRARY_PREFIX%\bin\git.exe" clone https://github.com/conda-forge/git-feedstock'  # [win]
+    - '"%LIBRARY_PREFIX%\bin\git.exe" version --build-options | findstr /c:"cpu: aarch64"'  # [win and arm64]
+    - '"%LIBRARY_PREFIX%\usr\bin\bash.exe" --version'  # [win]
+    - '"%LIBRARY_PREFIX%\usr\bin\cygpath.exe" -w /'  # [win]
 
     # Git credential commands
     - git-credential-osxkeychain 2>&1 | grep -q usage  # [osx]

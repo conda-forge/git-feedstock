@@ -1,4 +1,4 @@
-7za x PortableGit-%PKG_VERSION%-%ARCH%-bit.7z.exe -o"%LIBRARY_PREFIX%\" -aoa
+PortableGit-%PKG_VERSION%.7z.exe -o"%LIBRARY_PREFIX%\" -y
 if errorlevel 1 exit 1
 
 cd %LIBRARY_PREFIX%
