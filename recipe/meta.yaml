@@ -74,7 +74,7 @@ test:
     - '"%LIBRARY_PREFIX%\bin\git.exe" clone https://github.com/conda-forge/git-feedstock'  # [win]
     - '"%LIBRARY_PREFIX%\bin\git.exe" version --build-options | findstr /c:"cpu: aarch64"'  # [win and arm64]
     - '"%LIBRARY_PREFIX%\usr\bin\bash.exe" --version'  # [win]
-    - '"%LIBRARY_PREFIX%\usr\bin\cygpath.exe" -w / | findstr /b /l /i /c:"%LIBRARY_PREFIX%"'  # [win]
+    - '"%LIBRARY_PREFIX%\usr\bin\cygpath.exe" -w /'  # [win]
 
     # Git credential commands
     - git-credential-osxkeychain 2>&1 | grep -q usage  # [osx]
@@ -95,8 +95,9 @@ test:
 about:
   home: https://git-scm.com/
   license: GPL-2.0-or-later and LGPL-2.1-or-later
-  license_file: code/COPYING  # [not win]
-  license_file: COPYING  # [win]
+  license_file:
+    - code/COPYING  # [not win]
+    - COPYING  # [win]
   summary: distributed version control system
 
 extra:
