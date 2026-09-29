@@ -1,4 +1,4 @@
-{% set version = "2.55.0" %}
+{% set version = "2.56.0" %}
 
 package:
   name: git
@@ -7,29 +7,29 @@ package:
 source:
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-{{ version }}.tar.gz  # [not win]
     folder: code  # [not win]
-    sha256: 0842dc384a23ac33ba3e570c4f3a8ded85963ee4713b1cd21153c3db41813d1e  # [not win]
+    sha256: 826817fd3671b8565586d6d49f688298de8354ab11db829c02720e5c74b9b39f  # [not win]
     patches:   # [not win]
       - 0001-macOS-Do-not-use-the-system-Wish-urgh.patch  # [not win]
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-{{ version }}.tar.gz  # [not win]
     folder: manpages  # [not win]
-    sha256: e1d56c160c55be805d339613d6c5cdb1269d5346a50d757c39135f1449e28ed5  # [not win]
+    sha256: be5ced6a6333baa36ecd4c1575bcf66aee9b04444b918115ff87bf65cd6d61b4  # [not win]
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-{{ version }}.tar.gz  # [not win]
     folder: htmldocs  # [not win]
-    sha256: 8cc302f07f4d246b556c4f4f57cdc0aa7f13a57f9b5c94629ff8ec26cddf66b5  # [not win]
+    sha256: 62b477a75a997fa16532c4d44e26a6a47a512ad7086116d912bb2ab16c785bc3  # [not win]
 
   - url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
     fn: PortableGit-{{ version }}.7z.exe  # [win64]
     folder: .  # [win64]
-    sha256: dfa8cad3ce7e685b9bfbbb2125afcf7c68d4f53490426702ffac367dac62e928  # [win64]
+    sha256: eceb5e061aa90df2f69ddd3e90f0030e1b8037a7829934bc40e4be1caa1accc1  # [win64]
   - url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-arm64.7z.exe  # [win and arm64]
     fn: PortableGit-{{ version }}.7z.exe  # [win and arm64]
     folder: .  # [win and arm64]
-    sha256: b1fe421482c6e5a1aa1135406d7eeb89adf5436b3e5af183cdcd6ffe3c6bc8f2  # [win and arm64]
+    sha256: edd9bd32aefa5d2bd4b938c38c18ceca306a7f6b29a6951cd6a4bb16d9d28d8f  # [win and arm64]
   - url: https://raw.githubusercontent.com/git-for-windows/git/v{{ version }}.windows.1/COPYING  # [win]
     sha256: 5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e  # [win]
 
 build:
-  number: 3
+  number: 0
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
   ignore_run_exports_from:
