@@ -1,3 +1,5 @@
+DOCKER_PLATFORM:
+- linux/aarch64
 c_compiler:
 - gcc
 c_compiler_version:
@@ -21,7 +23,7 @@ libiconv:
 openssl:
 - '3.5'
 pcre2:
-- '10.47'
+- '10.49'
 rust_compiler:
 - rust
 target_platform:
