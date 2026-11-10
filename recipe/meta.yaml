@@ -1,4 +1,4 @@
-{% set version = "2.56.0" %}
+{% set version = "2.50.2" %}
 
 package:
   name: git
@@ -7,29 +7,20 @@ package:
 source:
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-{{ version }}.tar.gz  # [not win]
     folder: code  # [not win]
-    sha256: 826817fd3671b8565586d6d49f688298de8354ab11db829c02720e5c74b9b39f  # [not win]
+    sha256: 8b80dca9c986a2ebea09879fcb98815fdf1c8d64b3faf4abceda3b72be90bd1c  # [not win]
     patches:   # [not win]
       - 0001-macOS-Do-not-use-the-system-Wish-urgh.patch  # [not win]
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-{{ version }}.tar.gz  # [not win]
     folder: manpages  # [not win]
-    sha256: be5ced6a6333baa36ecd4c1575bcf66aee9b04444b918115ff87bf65cd6d61b4  # [not win]
+    sha256: 6d43a9fc83e98a693ca6225581ae30f5a48ca5b2bca73b58b12c4c1406199311  # [not win]
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-{{ version }}.tar.gz  # [not win]
     folder: htmldocs  # [not win]
-    sha256: 62b477a75a997fa16532c4d44e26a6a47a512ad7086116d912bb2ab16c785bc3  # [not win]
-
-  - url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
-    fn: PortableGit-{{ version }}.7z.exe  # [win64]
-    folder: .  # [win64]
-    sha256: eceb5e061aa90df2f69ddd3e90f0030e1b8037a7829934bc40e4be1caa1accc1  # [win64]
-  - url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-arm64.7z.exe  # [win and arm64]
-    fn: PortableGit-{{ version }}.7z.exe  # [win and arm64]
-    folder: .  # [win and arm64]
-    sha256: edd9bd32aefa5d2bd4b938c38c18ceca306a7f6b29a6951cd6a4bb16d9d28d8f  # [win and arm64]
-  - url: https://raw.githubusercontent.com/git-for-windows/git/v{{ version }}.windows.1/COPYING  # [win]
-    sha256: 5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e  # [win]
+    sha256: 251e23d3006350814e11d8e849f07f14c613fad5638a5b5b1f178e6c8c8025e0  # [not win]
 
 build:
-  number: 1
+  number: 0
+  # Git for Windows (PortableGit) has not published a release matching this version yet.
+  skip: true  # [win]
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
   ignore_run_exports_from:
