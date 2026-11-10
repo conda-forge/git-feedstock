@@ -1,4 +1,4 @@
-{% set version = "2.50.2" %}
+{% set version = "2.51.3" %}
 
 package:
   name: git
@@ -7,15 +7,15 @@ package:
 source:
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-{{ version }}.tar.gz  # [not win]
     folder: code  # [not win]
-    sha256: 8b80dca9c986a2ebea09879fcb98815fdf1c8d64b3faf4abceda3b72be90bd1c  # [not win]
+    sha256: 6a1efa88d419a3cfe0bed3392e40a35c20a2109cec71cbe09d27026aa606bddc  # [not win]
     patches:   # [not win]
       - 0001-macOS-Do-not-use-the-system-Wish-urgh.patch  # [not win]
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-{{ version }}.tar.gz  # [not win]
     folder: manpages  # [not win]
-    sha256: 6d43a9fc83e98a693ca6225581ae30f5a48ca5b2bca73b58b12c4c1406199311  # [not win]
+    sha256: c5143c5ee8a70182bc29e0cb4b6de00eb743913dcd5579a752125503095f0aad  # [not win]
   - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-{{ version }}.tar.gz  # [not win]
     folder: htmldocs  # [not win]
-    sha256: 251e23d3006350814e11d8e849f07f14c613fad5638a5b5b1f178e6c8c8025e0  # [not win]
+    sha256: 3faa66ef277b97b786e575d0b69b47162e0f8bf789a743132c5f6526306646e7  # [not win]
 
 build:
   number: 0
